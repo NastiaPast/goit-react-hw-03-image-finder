@@ -75,14 +75,16 @@ class App extends Component {
   };
 
   handleSearchSubmit = search => {
-    this.setState({
-      search,
-      images: [],
-      page: 1,
-      total: 1,
-      loading: false,
-      error: null,
-    });
+    if (search !== this.state.search) {
+      this.setState({
+        search,
+        images: [],
+        page: 1,
+        total: 1,
+        loading: false,
+        error: null,
+      });
+    }
   };
 
   handleCloseModal = () => {
